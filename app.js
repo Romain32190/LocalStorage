@@ -1,16 +1,29 @@
-	$(document).ready(function() { 
+function chargement()
+{
+	var a = localStorage.getItem('string');
+	if( a !== null ) {
+	$("#retour").append(a);
+	}
+}
 
-	$("#button").click(function(){
 
-	var valeur = $("#age").val();
 
-	localStorage.setItem("string", valeur);
-	var valeur = localStorage.getItem("string");
-	$('input').val("");
 
+$(document).ready(function()
+{
+
+
+	$("#button").click(function()
+	{
+		var valeur = $("#age").val();
+		localStorage.setItem('string', valeur);
 	});
+
+
+	chargement();
 });
 
- 
+
+
 
 
